@@ -1,14 +1,23 @@
 
+import React from 'react';
 import ImageList from './component/ImageList';
 import SearchBar from './component/SearchBar';
 
-function App() {
+class App extends React.Component {
+
+ onSearchSubmit(term) {
+  console.log(term);
+ }
+
+
+  render() {
   return (
     <div className="ui container" style={{marginTop: '20px'}}>
-      <SearchBar />
+      <SearchBar  onSubmit={this.onSearchSubmit} />
       <ImageList />
     </div>
   );
+}
 }
 
 export default App;
